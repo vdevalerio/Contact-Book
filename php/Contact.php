@@ -6,19 +6,19 @@
 		private $phone;
 
 		# Methods
-		function set_name($name)
+		function setName($name)
 		{
 			$this->name = $name;
 		}
-		function get_name()
+		function getName()
 		{
 			return $this->name;
 		}
-		function set_phone($phone)
+		function setPhone($phone)
 		{
 			$this->phone = $phone;
 		}
-		function get_phone()
+		function getPhone()
 		{
 			return $this->phone;
 		}

@@ -26,6 +26,18 @@
 				}
 			}
 		}
+		public function editContact($oldName, $newName, $newPhone)
+		{
+			for($i = 0; $i < count($this->contactList); $i++)
+			{
+				if($this->contactList[$i]->getName() == $oldName)
+				{
+					$this->contactList[$i]->setName($newName);
+					$this->contactList[$i]->setPhone($newPhone);
+
+				}
+			}
+		}
 	}
 	#$book = new Book();
 	#$book->createContact("Name 1", "Phone 1");
@@ -34,7 +46,7 @@
 	#$book->createContact("Name 4", "Phone 4");
 	#$book->createContact("Name 5", "Phone 5");
 
-	#echo "Before deleting:<br/>";
+	#echo "Before editing:<br/>";
 	#foreach($book->getContactList() as $element)
 	#{
 	#	echo "Name: " .$element->getName(). "<br/>";
@@ -42,9 +54,9 @@
 	#	echo "<br/>";
 	#}
 
-	#$book->deleteContact("Name 3");
+	#$book->editContact("Name 3", "Boladaum", "123123");
 
-	#echo "After deleting:<br/>";
+	#echo "After editing:<br/>";
 	#foreach($book->getContactList() as $element)
 	#{
 	#	echo "Name: " .$element->getName(). "<br/>";

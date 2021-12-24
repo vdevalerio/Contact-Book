@@ -23,14 +23,4 @@
 			return $this->phone;
 		}
 	}
-
-# TODO:
-# Contact book:
-# 	Contact:
-# 		Name;
-# 		Phone;
-# 	Add contact;
-# 	Remove contact;
-# 	Edit contact;
-
 ?>

@@ -6,6 +6,11 @@
 		private $phone;
 
 		# Methods
+		public function __construct($name, $phone)
+		{
+			$this->name = $name;
+			$this->phone = $phone;
+		}
 		public function setName($name)
 		{
 			$this->name = $name;

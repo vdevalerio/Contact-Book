@@ -1,9 +1,11 @@
 <?php
 	class Contact
 	{
+		# Properties
 		private $name;
 		private $phone;
 
+		# Methods
 		function set_name($name)
 		{
 			$this->name = $name;

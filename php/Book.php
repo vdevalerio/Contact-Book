@@ -22,7 +22,6 @@
 			{
 				echo "Name: " .$element->getName(). "<br/>";
 				echo "Phone: " .$element->getPhone(). "<br/>";
-				echo "<br/>";
 			}
 		}
 		public function deleteContact($name)
@@ -48,18 +47,18 @@
 			}
 		}
 	}
-	$book = new Book();
-	$book->createContact("Name 1", "Phone 1");
-	$book->createContact("Name 2", "Phone 2");
-	$book->createContact("Name 3", "Phone 3");
-	$book->createContact("Name 4", "Phone 4");
-	$book->createContact("Name 5", "Phone 5");
+	#$book = new Book();
+	#$book->createContact("Name 1", "Phone 1");
+	#$book->createContact("Name 2", "Phone 2");
+	#$book->createContact("Name 3", "Phone 3");
+	#$book->createContact("Name 4", "Phone 4");
+	#$book->createContact("Name 5", "Phone 5");
 
-	echo "Before editing:<br/>";
-	$book->printContactList();
+	#echo "Before editing:<br/>";
+	#$book->printContactList();
 
-	$book->editContact("Name 3", "Boladaum", "123123");
+	#$book->editContact("Name 3", "Boladaum", "123123");
 
-	echo "After editing:<br/>";
-	$book->printContactList();
+	#echo "After editing:<br/>";
+	#$book->printContactList();
 ?>

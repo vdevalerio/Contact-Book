@@ -27,3 +27,18 @@
 	}
 
 ?>
+
+<html>
+<body>
+<?php
+	$handler = new IOHandler();
+	$handler->initBook();
+	if(isset($_POST["name"]) && isset($_POST["phone"]))
+	{
+		$handler->getBook()->createContact($_POST["name"], $_POST["phone"]);
+		$handler->printContactList();
+	}
+?>
+<a href="../html/index.html"> <button>Back</button></a>
+</body>
+</html>

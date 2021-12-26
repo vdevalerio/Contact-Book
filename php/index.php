@@ -19,6 +19,8 @@
 #	selectFromTable($connection, $tableName, $field1, $field2);
 #	selectFromTableByValue($connection, $tableName, $field1, $field2, $field1, "contact4");
 #	selectFromTableOrdered($connection, $tableName, $field1, $field2, $field1);
-	deleteFromTable($connection, $tableName, "name", "contact1");
+#	deleteFromTable($connection, $tableName, "name", "contact1");
+#	updateFromTable($connection, $tableName, 8, $field1, "Marcos");
+	updateFromTable($connection, $tableName, 8, $field2, "123123");
 	closeConnection($connection);
 ?>

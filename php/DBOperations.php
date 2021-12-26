@@ -151,4 +151,17 @@
 			echo "Error deleting record: " .$connection->error. "<br/>";
 		}
 	}
+	function updateFromTable($connection, $tableName, $id, $requiredField, $requiredValue)
+	{
+			$sql = "UPDATE $tableName SET $requiredField='$requiredValue' WHERE id=$id";
+
+		if($connection->query($sql))
+		{
+			echo "Record updated successfully<br/>";
+		}
+		else
+		{
+			echo "Error updating record: " .$connection->error. "<br/>";
+		}
+	}
 ?>

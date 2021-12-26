@@ -22,7 +22,8 @@
 	{
 		$connection->close();
 	}
-	function createDataBase($connection, $name){
+	function createDataBase($connection, $name)
+	{
 		$sql = "CREATE DATABASE " .$name;
 		if ($connection->query($sql) === TRUE)
 		{
@@ -35,16 +36,16 @@
 	}
 	function createTable($connection, $name, $table)
 	{
-			$sql = "CREATE TABLE $name $table";
+		$sql = "CREATE TABLE $name $table";
 
-			if($connection->query($sql) === TRUE)
-			{
-				echo "Table $name created successfully<br/>";
-			}
-			else
-			{
-				echo "Error creating table: " .$connection->error. "<br/>";
-			}
+		if($connection->query($sql) === TRUE)
+		{
+			echo "Table $name created successfully<br/>";
+		}
+		else
+		{
+			echo "Error creating table: " .$connection->error. "<br/>";
+		}
 	}
 	function renameTable($connection, $oldName, $newName)
 	{
@@ -96,7 +97,8 @@
 		{
 			while($row = $result->fetch_assoc())
 			{
-				echo "[$row[id]] -> $field1: $row[$field1] - $field2: $row[$field2]<br/>";
+				echo "[$row[id]] -> $field1: $row[$field1] - 
+						$field2: $row[$field2]<br/>";
 			}
 		}
 		else
@@ -104,16 +106,19 @@
 			echo "No results found<br/>";
 		}
 	}
-	function selectFromTableByValue($connection, $tableName, $field1, $field2, $requiredField, $requiredValue)
+	function selectFromTableByValue($connection, $tableName, $field1, $field2,
+		   							$requiredField, $requiredValue)
 	{
-		$sql = "SELECT id, $field1, $field2 FROM $tableName WHERE $requiredField='$requiredValue'";
+		$sql = "SELECT id, $field1, $field2 FROM $tableName WHERE
+			   		$requiredField='$requiredValue'";
 		$result = $connection->query($sql);
 
 		if($result->num_rows > 0)
 		{
 			while($row = $result->fetch_assoc())
 			{
-				echo "[$row[id]] -> $field1: $row[$field1] - $field2: $row[$field2]<br/>";
+				echo "[$row[id]] -> $field1: $row[$field1] - 
+						$field2: $row[$field2]<br/>";
 			}
 		}
 		else
@@ -121,16 +126,19 @@
 			echo "No results found<br/>";
 		}
 	}
-	function selectFromTableOrdered($connection, $tableName, $field1, $field2, $orderedField)
+	function selectFromTableOrdered($connection, $tableName, $field1, $field2,
+		   							$orderedField)
 	{
-		$sql = "SELECT id, $field1, $field2 FROM $tableName ORDER BY $orderedField";
+		$sql = "SELECT id, $field1, $field2 FROM $tableName ORDER BY 
+					$orderedField";
 		$result = $connection->query($sql);
 
 		if($result->num_rows > 0)
 		{
 			while($row = $result->fetch_assoc())
 			{
-				echo "[$row[id]] -> $field1: $row[$field1] - $field2: $row[$field2]<br/>";
+				echo "[$row[id]] -> $field1: $row[$field1] - 
+						$field2: $row[$field2]<br/>";
 			}
 		}
 		else
@@ -138,7 +146,8 @@
 			echo "No results found<br/>";
 		}
 	}
-	function deleteFromTable($connection, $tableName, $requiredField, $requiredValue)
+	function deleteFromTable($connection, $tableName, $requiredField, 
+							$requiredValue)
 	{
 		$sql = "DELETE FROM $tableName WHERE $requiredField='$requiredValue'";
 
@@ -151,9 +160,11 @@
 			echo "Error deleting record: " .$connection->error. "<br/>";
 		}
 	}
-	function updateFromTable($connection, $tableName, $id, $requiredField, $requiredValue)
+	function updateFromTable($connection, $tableName, $id, $requiredField, 
+							$requiredValue)
 	{
-			$sql = "UPDATE $tableName SET $requiredField='$requiredValue' WHERE id=$id";
+		$sql = "UPDATE $tableName SET $requiredField='$requiredValue' 
+					WHERE id=$id";
 
 		if($connection->query($sql))
 		{

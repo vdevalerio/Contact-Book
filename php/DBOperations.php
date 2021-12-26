@@ -1,5 +1,25 @@
 <?php
-	function openConnection($dbname)
+
+	function openConnectionServer()
+	{
+		$dbhost = "127.0.0.1";
+		$dbuser = "root";
+		$dbpass = "MQjLTkEoTc714U][";
+
+		$connection = new mysqli($dbhost, $dbuser, $dbpass);
+
+		if ($connection->connect_error)
+		{
+			die("Connection failed: " .$connection->connect_error. "<br/>");
+		}
+		else
+		{
+			echo "Connection succeeded<br/>";
+		}
+		
+		return $connection;
+	}
+	function openConnectionDataBase($dbname)
 	{
 		$dbhost = "127.0.0.1";
 		$dbuser = "root";

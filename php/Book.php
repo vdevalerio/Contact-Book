@@ -59,13 +59,17 @@
 		}
 		public function deleteContact($name)
 		{
-			for($i = 0; $i < count($this->contactList); $i++)
-			{
-				if($this->contactList[$i]->getName() == $name)
-				{
-					unset($this->contactList[$i]);
-				}
-			}
+			$this->connection = openConnectionDataBase($this->dbName);
+			deleteFromTable($this->connection, $this->tableName, $this->field1,
+							$name);
+			closeConnection($this->connection);
+			#for($i = 0; $i < count($this->contactList); $i++)
+			#{
+			#	if($this->contactList[$i]->getName() == $name)
+			#	{
+			#		unset($this->contactList[$i]);
+			#	}
+			#}
 		}
 		public function editContact($oldName, $newName, $newPhone)
 		{

@@ -34,6 +34,19 @@
 			echo "Error creating database: " .$connection->error. "<br/>";
 		}
 	}
+	function dropDataBase($connection, $databaseName)
+	{
+		$sql = "DROP DATABASE IF EXISTS $databaseName";
+
+		if($connection->query($sql) === TRUE)
+		{
+			echo "Database deleted successfully<br/>";
+		}
+		else
+		{
+			echo "Error deleting database: " .$connection->error. "<br/>";
+		}
+	}
 	function createTable($connection, $name, $table)
 	{
 		$sql = "CREATE TABLE $name $table";

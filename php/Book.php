@@ -7,19 +7,20 @@
 		private $contact;
 		private $contactList = [];
 		private $connection;
+		private $dbName = "agenda";
+		private $tableName = "Contact";
 
 		# Methods
 		public function initializeDataBase()
 		{
-			$dataBaseName = "agenda";
-			$this->connection = openConnection($dataBaseName);
-			createDataBase($this->connection, $dataBaseName);		
+			$this->connection = openConnection($this->dbName);
+			createDataBase($this->connection, $this->dbName);		
 			$table = " (
 				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 				name VARCHAR(30) NOT NULL,
 				phone VARCHAR(11) NOT NULL
 			) ";
-			createTable($this->connection, "Contact", $table);
+			createTable($this->connection, $this->tableName, $table);
 			closeConnection($this->connection);
 		}
 		public function createContact($name, $phone)

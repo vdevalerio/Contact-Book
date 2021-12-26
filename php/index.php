@@ -3,10 +3,12 @@
 	
 	$databaseName = "agenda";
 	$tableName = "contact";
+	$field1 = "name";
+	$field2 = "phone";
 	$table = " (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			name VARCHAR(30) NOT NULL,
-			phone VARCHAR(11)
+			$field1 VARCHAR(30) NOT NULL,
+			$field2 VARCHAR(11)
 	)";
 	$connection = openConnection($databaseName);
 #	createDataBase($connection, $databaseName);

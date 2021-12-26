@@ -121,4 +121,21 @@
 			echo "No results found<br/>";
 		}
 	}
+	function selectFromTableOrdered($connection, $tableName, $field1, $field2, $orderedField)
+	{
+		$sql = "SELECT $field1, $field2 FROM $tableName ORDER BY $orderedField";
+		$result = $connection->query($sql);
+
+		if($result->num_rows > 0)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				echo "$field1: $row[$field1] - $field2: $row[$field2]<br/>";
+			}
+		}
+		else
+		{
+			echo "No results found<br/>";
+		}
+	}
 ?>

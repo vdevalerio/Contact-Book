@@ -73,15 +73,20 @@
 		}
 		public function editContact($oldName, $newName, $newPhone)
 		{
-			for($i = 0; $i < count($this->contactList); $i++)
-			{
-				if($this->contactList[$i]->getName() == $oldName)
-				{
-					$this->contactList[$i]->setName($newName);
-					$this->contactList[$i]->setPhone($newPhone);
+			$this->connection = openConnectionDataBase($this->dbName);
+			updateFromTable($this->connection, $this->tableName,
+							$this->field1, $oldName, $newName,
+							$this->field2, $newPhone);
+			closeConnection($this->connection);
+			#for($i = 0; $i < count($this->contactList); $i++)
+			#{
+			#	if($this->contactList[$i]->getName() == $oldName)
+			#	{
+			#		$this->contactList[$i]->setName($newName);
+			#		$this->contactList[$i]->setPhone($newPhone);
 
-				}
-			}
+			#	}
+			#}
 		}
 	}
 ?>

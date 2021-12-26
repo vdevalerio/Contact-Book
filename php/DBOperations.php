@@ -1,11 +1,11 @@
 <?php
-	function openConnection()
+	function openConnection($dbname)
 	{
 		$dbhost = "127.0.0.1";
 		$dbuser = "root";
 		$dbpass = "MQjLTkEoTc714U][";
 
-		$connection = new mysqli($dbhost, $dbuser, $dbpass);
+		$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 		if ($connection->connect_error)
 		{

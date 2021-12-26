@@ -13,8 +13,10 @@
 		# Methods
 		public function initializeDataBase()
 		{
-			$this->connection = openConnection($this->dbName);
+			$this->connection = openConnectionServer();
 			createDataBase($this->connection, $this->dbName);		
+			closeConnection($this->connection);
+			$this->connection = openConnectionDataBase($this->dbName);
 			$table = " (
 				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 				name VARCHAR(30) NOT NULL,

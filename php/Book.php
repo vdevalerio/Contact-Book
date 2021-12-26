@@ -4,8 +4,8 @@
 	class Book
 	{
 		# Properties
-		private $contact;
-		private $contactList = [];
+		#private $contact;
+		#private $contactList = [];
 		private $connection;
 		private $dbName = "agenda";
 		private $tableName = "Contact";
@@ -41,8 +41,13 @@
 		}
 		public function createContact($name, $phone)
 		{
-			$this->contact = new Contact($name, $phone);
-			$this->contactList[] = $this->contact;
+			$this->connection = openConnectionDataBase($this->dbName);
+			insertIntoTable($this->connection, $this->tableName, $this->field1,
+			  				$name, $this->field2, $phone);	
+			closeConnection($this->connection);
+				
+			#$this->contact = new Contact($name, $phone);
+			#$this->contactList[] = $this->contact;
 		}
 		public function getContactList()
 		{

@@ -11,6 +11,7 @@
 	$connection = openConnection($databaseName);
 #	createDataBase($connection, $databaseName);
 #	createTable($connection, $tableName, $table);
-	renameTable($connection, "contato", $tableName);
+#	renameTable($connection, "contato", $tableName);
+	dropTable($connection, $tableName);
 	closeConnection($connection);
 ?>

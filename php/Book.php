@@ -9,6 +9,8 @@
 		private $connection;
 		private $dbName = "agenda";
 		private $tableName = "Contact";
+		private $field1 = "name";
+		private $field2 = "phone";
 
 		# Methods
 		public function initializeDataBase()
@@ -30,8 +32,8 @@
 			$this->connection = openConnectionDataBase($this->dbName);
 			$table = " (
 				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-				name VARCHAR(30) NOT NULL,
-				phone VARCHAR(11) NOT NULL
+				$field1 VARCHAR(30) NOT NULL,
+				$field2 VARCHAR(11) NOT NULL
 			) ";
 			dropTable($this->connection, $this->tableName, $table);
 			dropDataBase($this->connection, $this->dbName);

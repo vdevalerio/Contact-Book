@@ -14,6 +14,7 @@
 #	createDataBase($connection, $databaseName);
 #	createTable($connection, $tableName, $table);
 #	renameTable($connection, "contato", $tableName);
-	dropTable($connection, $tableName);
+#	dropTable($connection, $tableName);
+	insertIntoTable($connection, $tableName, $field1, "contact1", $field2, "phone1");	
 	closeConnection($connection);
 ?>

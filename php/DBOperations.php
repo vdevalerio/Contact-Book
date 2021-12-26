@@ -160,6 +160,23 @@
 			echo "No results found<br/>";
 		}
 	}
+	function selectFromTableByField($connection, $tableName, $field)
+	{
+		$sql = "SELECT $field FROM $tableName";
+		$result = $connection->query($sql);
+
+		if($result->num_rows > 0)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				echo "$row[$field]<br/>";
+			}
+		}
+		else
+		{
+			echo "No results found<br/>";
+		}
+	}
 	function selectFromTableOrdered($connection, $tableName, $field1, $field2,
 		   							$orderedField)
 	{

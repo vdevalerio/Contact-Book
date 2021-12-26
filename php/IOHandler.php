@@ -9,6 +9,7 @@
 		public function initBook()
 		{
 			$this->book = new Book();
+			$this->book->initializeDataBase();
 		}
 		public function getBook()
 		{
@@ -17,12 +18,7 @@
 		public function printContactList()
 		{
 			echo "<h3> Contact List </h3>";
-			echo "<ul>";
-			foreach($this->book->getContactList() as $element)
-			{
-				echo "<li>" .$element->getName(). "</li>";
-			}
-			echo "</ul>";
+			$this->book->getContactNameList();
 		}
 	}
 
@@ -35,9 +31,15 @@
 	$handler->initBook();
 	if(isset($_POST["name"]) && isset($_POST["phone"]))
 	{
-		$handler->getBook()->createContact($_POST["name"], $_POST["phone"]);
-		$handler->printContactList();
-	}
+		if($_POST["name"] != "" && $_POST["phone"] != "")
+		{
+			$handler->getBook()->createContact($_POST["name"], $_POST["phone"]);
+			$handler->printContactList();
+		}
+		else
+		{
+		}
+	}	 
 ?>
 <a href="../html/index.html"> <button>Back</button></a>
 </body>

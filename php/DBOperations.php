@@ -42,4 +42,17 @@
 				echo "Error creating table: $connection->error";
 			}
 	}
+	function renameTable($connection, $oldName, $newName)
+	{
+		$sql = "RENAME TABLE $oldName to $newName";
+		
+		if($connection->query($sql) === TRUE)
+		{
+			echo "Table $oldName renamed to $newName successfully";
+		}
+		else
+		{
+			echo "Error: rename failed";
+		}
+	}
 ?>

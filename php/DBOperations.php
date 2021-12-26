@@ -194,11 +194,13 @@
 			echo "Error deleting record: " .$connection->error. "<br/>";
 		}
 	}
-	function updateFromTable($connection, $tableName, $id, $requiredField, 
-							$requiredValue)
+	function updateFromTable($connection, $tableName,
+						$field1, $oldValue1, $newValue1,
+						$field2, $newValue2)
 	{
-		$sql = "UPDATE $tableName SET $requiredField='$requiredValue' 
-					WHERE id=$id";
+		$sql = "UPDATE $tableName 
+				SET $field1='$newValue1', $field2='$newValue2' 
+				WHERE $field1='$oldValue1'";
 
 		if($connection->query($sql))
 		{

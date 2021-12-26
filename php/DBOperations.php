@@ -29,4 +29,17 @@
 			echo "Error creating database: " .$connection->error;
 		}
 	}
+	function createTable($connection, $name, $table)
+	{
+			$sql = "CREATE TABLE $name $table";
+
+			if($connection->query($sql) === TRUE)
+			{
+				echo "Table $name created successfully";
+			}
+			else
+			{
+				echo "Error creating table: $connection->error";
+			}
+	}
 ?>

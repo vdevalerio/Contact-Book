@@ -1,12 +1,26 @@
 <?php
 	include('Contact.php');
+	include('DBOperations.php');
 	class Book
 	{
 		# Properties
 		private $contact;
 		private $contactList = [];
+		private $connection;
 
 		# Methods
+		public function initializeDataBase($dataBaseName)
+		{
+			$this->connection = openConnection($dataBaseName);
+			createDataBase($this->connection, $dataBaseName);		
+			$table = " (
+				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				name VARCHAR(30) NOT NULL,
+				phone VARCHAR(11) NOT NULL
+			) ";
+			createTable($this->connection, "Contact", $table);
+			closeConnection($this->connection);
+		}
 		public function createContact($name, $phone)
 		{
 			$this->contact = new Contact($name, $phone);

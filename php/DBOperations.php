@@ -87,4 +87,21 @@
 			echo "Error: " .$sql. "<br/>" .$connection->error. "<br/>";
 		}
 	}
+	function selectFromTable($connection, $tableName, $field1, $field2)
+	{
+		$sql = "SELECT $field1, $field2 FROM $tableName";
+		$result = $connection->query($sql);
+
+		if($result->num_rows > 0)
+		{
+			while($row = $result->fetch_assoc())
+			{
+				echo "$field1: $row[$field1] - $field2: $row[$field2]<br/>";
+			}
+		}
+		else
+		{
+			echo "No results found<br/>";
+		}
+	}
 ?>

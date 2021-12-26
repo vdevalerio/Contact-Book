@@ -138,4 +138,17 @@
 			echo "No results found<br/>";
 		}
 	}
+	function deleteFromTable($connection, $tableName, $requiredField, $requiredValue)
+	{
+		$sql = "DELETE FROM $tableName WHERE $requiredField='$requiredValue'";
+
+		if($connection->query($sql) === TRUE)
+		{
+			echo "Record deleted successfully<br/>";
+		}
+		else
+		{
+			echo "Error deleting record: " .$connection->error. "<br/>";
+		}
+	}
 ?>

@@ -18,6 +18,7 @@
 #	insertIntoTable($connection, $tableName, $field1, "contact1", $field2, "phone1");	
 #	selectFromTable($connection, $tableName, $field1, $field2);
 #	selectFromTableByValue($connection, $tableName, $field1, $field2, $field1, "contact4");
-	selectFromTableOrdered($connection, $tableName, $field1, $field2, $field1);
+#	selectFromTableOrdered($connection, $tableName, $field1, $field2, $field1);
+	deleteFromTable($connection, $tableName, "name", "contact1");
 	closeConnection($connection);
 ?>

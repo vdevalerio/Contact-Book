@@ -16,5 +16,7 @@
 #	renameTable($connection, "contato", $tableName);
 #	dropTable($connection, $tableName);
 	insertIntoTable($connection, $tableName, $field1, "contact1", $field2, "phone1");	
+	selectFromTable($connection, $tableName, $field1, $field2);
+	selectFromTableByValue($connection, $tableName, $field1, $field2, $field1, "contact4");
 	closeConnection($connection);
 ?>

@@ -26,11 +26,11 @@
 		$sql = "CREATE DATABASE " .$name;
 		if ($connection->query($sql) === TRUE)
 		{
-			echo "Database created successfully";
+			echo "Database created successfully<br/>";
 		}
 		else
 		{
-			echo "Error creating database: " .$connection->error;
+			echo "Error creating database: " .$connection->error. "<br/>";
 		}
 	}
 	function createTable($connection, $name, $table)
@@ -39,11 +39,11 @@
 
 			if($connection->query($sql) === TRUE)
 			{
-				echo "Table $name created successfully";
+				echo "Table $name created successfully<br/>";
 			}
 			else
 			{
-				echo "Error creating table: $connection->error";
+				echo "Error creating table: " .$connection->error. "<br/>";
 			}
 	}
 	function renameTable($connection, $oldName, $newName)
@@ -52,11 +52,11 @@
 		
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Table $oldName renamed to $newName successfully";
+			echo "Table $oldName renamed to $newName successfully<br/>";
 		}
 		else
 		{
-			echo "Error: rename failed";
+			echo "Error renaming table: " .$connection->error. "<br/>";
 		}
 	}
 ?>

@@ -51,7 +51,11 @@
 		}
 		public function getContactList()
 		{
-			return $this->contactList;
+			$this->connection = openConnectionDataBase($this->dbName);
+			selectFromTable($this->connection, $this->tableName, $this->field1,
+			  				$this->field2);	
+			closeConnection($this->connection);
+			#return $this->contactList;
 		}
 		public function deleteContact($name)
 		{

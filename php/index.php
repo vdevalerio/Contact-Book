@@ -1,14 +1,16 @@
 <?php
 	include("DBOperations.php");
 	
-	$database = "agenda";
+	$databaseName = "agenda";
+	$tableName = "contact";
 	$table = " (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			name VARCHAR(30) NOT NULL,
 			phone VARCHAR(11)
 	)";
-	$connection = openConnection($database);
-	createDataBase($connection, $database);
-	createTable($connection, "contato", $table);
+	$connection = openConnection($databaseName);
+#	createDataBase($connection, $databaseName);
+#	createTable($connection, $tableName, $table);
+	renameTable($connection, "contato", $tableName);
 	closeConnection($connection);
 ?>

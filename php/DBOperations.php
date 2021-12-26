@@ -72,4 +72,19 @@
 			echo "Error dropping table: " .$connection->error. "<br/>";
 		}
 	}
+	function insertIntoTable($connection, $tableName,
+			$field1, $value1, $field2, $value2)
+	{
+		$sql = "INSERT INTO $tableName ($field1, $field2)
+				VALUES ('$value1', '$value2')";
+
+		if($connection->query($sql) === TRUE)
+		{
+			echo "New record created successfully<br/>";
+		}
+		else
+		{
+			echo "Error: " .$sql. "<br/>" .$connection->error. "<br/>";
+		}
+	}
 ?>

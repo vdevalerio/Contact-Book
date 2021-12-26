@@ -59,4 +59,17 @@
 			echo "Error renaming table: " .$connection->error. "<br/>";
 		}
 	}
+	function dropTable($connection, $tableName)
+	{
+		$sql = "DROP TABLE IF EXISTS $tableName";
+
+		if($connection->query($sql) === TRUE)
+		{
+			echo "Table $tableName dropped successfully<br/>";
+		}
+		else
+		{
+			echo "Error dropping table: " .$connection->error. "<br/>";
+		}
+	}
 ?>

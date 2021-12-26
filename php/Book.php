@@ -9,8 +9,9 @@
 		private $connection;
 
 		# Methods
-		public function initializeDataBase($dataBaseName)
+		public function initializeDataBase()
 		{
+			$dataBaseName = "agenda";
 			$this->connection = openConnection($dataBaseName);
 			createDataBase($this->connection, $dataBaseName);		
 			$table = " (

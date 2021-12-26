@@ -25,6 +25,7 @@
 	function createDataBase($connection, $name)
 	{
 		$sql = "CREATE DATABASE " .$name;
+
 		if ($connection->query($sql) === TRUE)
 		{
 			echo "Database created successfully<br/>";

@@ -3,7 +3,6 @@
 A project for [Test Dev PHP] by Umobi.
 
 #### TODO:
-- Integrate a DB so I can create a persistent contact list;
 - Add a new screen with contact's information;
 - Do a interface to handle IO;
 - Make the interface kinda pretty;

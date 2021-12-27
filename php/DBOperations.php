@@ -44,7 +44,7 @@
 	}
 	function createDataBase($connection, $name)
 	{
-		$sql = "CREATE DATABASE " .$name;
+		$sql = "CREATE DATABASE IF NOT EXISTS " .$name;
 
 		if ($connection->query($sql) === TRUE)
 		{
@@ -70,7 +70,7 @@
 	}
 	function createTable($connection, $name, $table)
 	{
-		$sql = "CREATE TABLE $name $table";
+		$sql = "CREATE TABLE IF NOT EXISTS $name $table";
 
 		if($connection->query($sql) === TRUE)
 		{

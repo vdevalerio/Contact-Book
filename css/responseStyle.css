@@ -1,0 +1,16 @@
+.panel {
+	width: 70%;
+	margin: 0px auto;
+	background-color: #ABABAB;
+	border: 10px solid #00E600;
+}
+.panel p {
+	font-size: 7vw;
+	margin: auto auto;
+	color: #00E600;
+	text-align: center;
+	text-shadow: -1px 1px 0 #000000,
+	 			  1px 1px 0 #000000,
+				  1px -1px 0 #000000,
+	 			 -1px 1px 0 #000000;
+}

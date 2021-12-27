@@ -41,6 +41,6 @@
 		}
 	}	 
 ?>
-<a href="../html/index.html"> <button>Back</button></a>
+<a href="index.php"> <button>Back</button></a>
 </body>
 </html>

@@ -14,7 +14,7 @@
 		}
 		else
 		{
-			echo "Connection succeeded<br/>";
+		#	echo "Connection succeeded<br/>";
 		}
 		
 		return $connection;
@@ -33,7 +33,7 @@
 		}
 		else
 		{
-			echo "Connection succeeded<br/>";
+		#	echo "Connection succeeded<br/>";
 		}
 		
 		return $connection;
@@ -48,7 +48,7 @@
 
 		if ($connection->query($sql) === TRUE)
 		{
-			echo "Database created successfully<br/>";
+		#	echo "Database created successfully<br/>";
 		}
 		else
 		{
@@ -61,7 +61,7 @@
 
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Database deleted successfully<br/>";
+		#	echo "Database deleted successfully<br/>";
 		}
 		else
 		{
@@ -74,7 +74,7 @@
 
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Table $name created successfully<br/>";
+		#	echo "Table $name created successfully<br/>";
 		}
 		else
 		{
@@ -87,7 +87,7 @@
 		
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Table $oldName renamed to $newName successfully<br/>";
+		#	echo "Table $oldName renamed to $newName successfully<br/>";
 		}
 		else
 		{
@@ -100,7 +100,7 @@
 
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Table $tableName dropped successfully<br/>";
+		#	echo "Table $tableName dropped successfully<br/>";
 		}
 		else
 		{
@@ -115,7 +115,7 @@
 
 		if($connection->query($sql) === TRUE)
 		{
-			echo "New record created successfully<br/>";
+		#	echo "New record created successfully<br/>";
 		}
 		else
 		{
@@ -131,8 +131,8 @@
 		{
 			while($row = $result->fetch_assoc())
 			{
-				echo "[$row[id]] -> $field1: $row[$field1] - 
-						$field2: $row[$field2]<br/>";
+				echo "<li>[$row[id]] -> $field1: $row[$field1] - 
+						$field2: $row[$field2]</li>";
 			}
 		}
 		else
@@ -204,7 +204,7 @@
 
 		if($connection->query($sql) === TRUE)
 		{
-			echo "Record deleted successfully<br/>";
+		#	echo "Record deleted successfully<br/>";
 		}
 		else
 		{
@@ -221,7 +221,7 @@
 
 		if($connection->query($sql))
 		{
-			echo "Record updated successfully<br/>";
+		#	echo "Record updated successfully<br/>";
 		}
 		else
 		{

@@ -1,18 +1,9 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	background-color: #C4C4C4;
 }
 
 html, body {
 	height: 100%;
-}
-
-.header * {
-	width: 100%;
-}
-
-.header > .logo-image > img {
-	width: 5%;
-	min-width: 50px;
+	background-color: #292929;
 }

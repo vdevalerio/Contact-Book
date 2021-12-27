@@ -19,14 +19,14 @@ html, body {
 .header > .logo-image img {
 	width: 30vw;
 	max-width: 100%;
-	min-width: 450px;
+	min-width: 300px;
 	margin: 0px 0px 0px -30px;
 	padding: calc(1.3vh + 10px) 0vw 0vh 10px;
 }
 
 .menu ul {
 	list-style-type: none;
-	margin: -65px 1vw 1vw 46vw;
+	margin: calc(-5vh - 23px) 1vw 1vw 46vw;
 	padding: 0;
 	overflow: hidden;
 	background-color: #262626;

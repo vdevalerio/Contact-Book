@@ -1,0 +1,20 @@
+.menu-functions ul {
+	width: 40vw;
+	min-width: 300px;
+	list-style-type: none;
+	overflow: hidden;
+}
+.menu-functions li {
+	margin: 10px auto;
+	background-color: #161616;
+}
+.menu-functions li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.menu-functions li a:hover {
+	background-color: #FF6600;
+}

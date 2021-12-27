@@ -23,24 +23,3 @@
 	}
 
 ?>
-
-<html>
-<body>
-<?php
-	$handler = new IOHandler();
-	$handler->initBook();
-	if(isset($_POST["name"]) && isset($_POST["phone"]))
-	{
-		if($_POST["name"] != "" && $_POST["phone"] != "")
-		{
-			$handler->getBook()->createContact($_POST["name"], $_POST["phone"]);
-			$handler->printContactList();
-		}
-		else
-		{
-		}
-	}	 
-?>
-<a href="index.php"> <button>Back</button></a>
-</body>
-</html>

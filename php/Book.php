@@ -96,4 +96,16 @@
 			#}
 		}
 	}
+	#$book = new Book();
+	#$book->initializeDataBase();
+	#$book->createContact("Name 1", "Phone 1");
+	#$book->createContact("Name 2", "Phone 2");
+	#$book->createContact("Name 3", "Phone 3");
+	#$book->createContact("Name 4", "Phone 4");
+	#$book->createContact("Name 5", "Phone 5");
+	#$book->deleteContact("Name 4");
+	#$book->editContact("Name 3", "PEDRO", "NEW PHONE");
+	#$book->getContactList();
+	#$book->getContactNameList();
+	#$book->deleteDataBase();
 ?>

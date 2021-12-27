@@ -1,5 +1,26 @@
-		<form action="../php/IOHandler.php" method="post">
-		Name: <input type="text" name="name"><br>
-		Phone: <input type="text" name="phone"<br>
-		<input type="submit">
-		</form>
+	</body>
+</html>
+
+<html>
+	<head>
+		<link href="../css/formStyle.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="center">
+			<div class="form">
+				<form action="../php/IOHandler.php" method="post">
+					<h2> Add new contact: </h2>
+					<span>Name</span>
+					<div class="input-container">
+						<input type="text" name="name" required>
+					</div><!--Input-Container-->
+					<span>Phone</span>
+					<div class="input-container">
+						<input type="text" name="phone">
+					</div><!--Input-Container-->
+						<div class="input-submit">
+					<input type="submit">
+					</div><!--Input-Submit-->
+				</form>
+			</div><!--Form-->
+		</div><!--Center-->

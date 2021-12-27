@@ -2,6 +2,11 @@
 
 A project for [Test Dev PHP] by Umobi.
 
+### Problems to fix:
+- DB init and del;
+- Bug in outputs being printed under header;
+- Lead with DBOperations output;
+
 #### TODO:
 - Add a new screen with contact's information;
 - Do a interface to handle IO;

@@ -23,3 +23,28 @@ html, body {
 	margin: 0px 0px 0px -30px;
 	padding: calc(1.3vh + 10px) 0vw 0vh 10px;
 }
+
+.menu ul {
+	list-style-type: none;
+	margin: -65px 1vw 1vw 46vw;
+	padding: 0;
+	overflow: hidden;
+	background-color: #262626;
+	float: right;
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.menu li a:hover {
+	background-color: #111;
+}

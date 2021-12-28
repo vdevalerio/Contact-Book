@@ -1,0 +1,21 @@
+.contact-list {
+	width: 40vw;
+	min-width: 300px;
+}
+.contact-list table, th, td {
+	border: 1px solid black;
+}
+.contact-list table {
+	width: 100%;
+}
+.contact-list th, td {
+	text-align: center;
+}
+.contact-list th {
+	background-color: #161616;
+	color: #DEDEDE;
+}
+.contact-list td {
+	background-color: #C4C4C4;
+	color: #353535;
+}

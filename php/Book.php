@@ -36,15 +36,23 @@
 		}
 		public function deleteDataBase()
 		{
-			$this->connection = openConnectionDataBase($this->dbName);
-			$table = " (
-				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-				$field1 VARCHAR(30) NOT NULL,
-				$field2 VARCHAR(11) NOT NULL
-			) ";
-			dropTable($this->connection, $this->tableName, $table);
-			dropDataBase($this->connection, $this->dbName);
-			closeConnection($this->connection);
+			$this->connection = openConnectionServer();
+			if(checkTableExistence($this->connection, $this->tableName))
+			{
+				$this->connection = openConnectionDataBase($this->dbName);
+				$table = " (
+					id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+					$field1 VARCHAR(30) NOT NULL,
+					$field2 VARCHAR(11) NOT NULL
+				) ";
+				dropTable($this->connection, $this->tableName, $table);
+				dropDataBase($this->connection, $this->dbName);
+				closeConnection($this->connection);
+			}
+			else
+			{
+				closeConnection($this->connection);
+			}
 		}
 		public function createContact($name, $phone)
 		{

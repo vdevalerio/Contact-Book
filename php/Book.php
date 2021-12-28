@@ -50,10 +50,12 @@
 				dropTable($this->connection, $this->tableName, $table);
 				dropDataBase($this->connection, $this->dbName);
 				closeConnection($this->connection);
+				return 1;
 			}
 			else
 			{
 				closeConnection($this->connection);
+				return 0;
 			}
 		}
 		public function createContact($name, $phone)

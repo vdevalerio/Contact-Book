@@ -16,16 +16,23 @@
 		public function initializeDataBase()
 		{
 			$this->connection = openConnectionServer();
-			createDataBase($this->connection, $this->dbName);		
-			closeConnection($this->connection);
-			$this->connection = openConnectionDataBase($this->dbName);
-			$table = " (
-				id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-				name VARCHAR(30) NOT NULL,
-				phone VARCHAR(11) NOT NULL
-			) ";
-			createTable($this->connection, $this->tableName, $table);
-			closeConnection($this->connection);
+			if(!checkTableExistence($this->connection, $this->tableName))
+			{
+				createDataBase($this->connection, $this->dbName);		
+				closeConnection($this->connection);
+				$this->connection = openConnectionDataBase($this->dbName);
+				$table = " (
+					id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+					name VARCHAR(30) NOT NULL,
+					phone VARCHAR(11) NOT NULL
+				) ";
+				createTable($this->connection, $this->tableName, $table);
+				closeConnection($this->connection);
+			}
+			else
+			{
+				closeConnection($this->connection);
+			}
 		}
 		public function deleteDataBase()
 		{

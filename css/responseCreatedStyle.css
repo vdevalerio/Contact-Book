@@ -1,10 +1,10 @@
-.panel {
+.panel-success {
 	width: 70%;
 	margin: 0px auto;
 	background-color: #ABABAB;
 	border: 10px solid #00E600;
 }
-.panel p {
+.panel-success p {
 	font-size: 7vw;
 	margin: auto auto;
 	color: #00E600;

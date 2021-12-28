@@ -3,7 +3,6 @@
 A project for [Test Dev PHP] by Umobi.
 
 ### Problems to fix:
-- DB init and del;
 - Bug in outputs being printed under header;
 - Lead with DBOperations output;
 

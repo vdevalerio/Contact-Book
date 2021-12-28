@@ -28,9 +28,11 @@
 				) ";
 				createTable($this->connection, $this->tableName, $table);
 				closeConnection($this->connection);
+				return 0;
 			}
 			else
 			{
+				return 1;
 				closeConnection($this->connection);
 			}
 		}

@@ -7,6 +7,6 @@
 	{
 		$handler->getBook()->createContact($_POST["name"], $_POST["phone"]);
 	}
-	echo file_get_contents("../html/response.html");
+	echo file_get_contents("../html/responseContactCreated.html");
 	echo file_get_contents("../html/footer.html");
 ?>

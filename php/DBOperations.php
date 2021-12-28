@@ -81,6 +81,21 @@
 			echo "Error creating table: " .$connection->error. "<br/>";
 		}
 	}
+	function checkTableExistence($connection, $tableName)
+	{
+		$sql = "SELECT *
+					FROM INFORMATION_SCHEMA.TABLES
+					WHERE TABLE_NAME = '$tableName'";
+		$result = $connection->query($sql);
+		if ($result->num_rows > 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 	function renameTable($connection, $oldName, $newName)
 	{
 		$sql = "RENAME TABLE $oldName to $newName";

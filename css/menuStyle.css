@@ -6,15 +6,19 @@
 }
 .menu-functions li {
 	margin: 10px auto;
-	background-color: #161616;
 }
-.menu-functions li a {
-	display: block;
+
+.button {
+	width: 100%;
+	display: inline-block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
-	text-decoration: none;
+	background-color: #161616;
+	font-family: serif;
+	font-size: 16px;
+	border: none;
 }
-.menu-functions li a:hover {
+.button:hover {
 	background-color: #FF6600;
 }

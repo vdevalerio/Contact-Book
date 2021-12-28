@@ -13,11 +13,26 @@
 		private $field2 = "phone";
 
 		# Methods
-		public function initializeDataBase()
+		public function checkDBExistence()
 		{
 			$this->connection = openConnectionServer();
-			if(!checkTableExistence($this->connection, $this->tableName))
+			if(checkTableExistence($this->connection, $this->tableName))
 			{
+				closeConnection($this->connection);
+				return 1;
+			}
+			else
+			{
+				closeConnection($this->connection);
+				return 0;
+			}
+
+		}
+		public function initializeDataBase()
+		{
+			if(!$this->checkDBExistence())
+			{
+				$this->connection = openConnectionServer();
 				createDataBase($this->connection, $this->dbName);		
 				closeConnection($this->connection);
 				$this->connection = openConnectionDataBase($this->dbName);
@@ -27,12 +42,6 @@
 					phone VARCHAR(11) NOT NULL
 				) ";
 				createTable($this->connection, $this->tableName, $table);
-				closeConnection($this->connection);
-				return 0;
-			}
-			else
-			{
-				return 1;
 				closeConnection($this->connection);
 			}
 		}

@@ -83,6 +83,13 @@
 			closeConnection($this->connection);
 			#return $this->contactList;
 		}
+		public function getContactByName($name)
+		{
+			$this->connection = openConnectionDataBase($this->dbName);
+			selectFromTableByValue($this->connection, $this->tableName, $this->field1, $this->field2, $this->field1, $name);
+			closeConnection($this->connection);
+		
+		}
 		public function getContactNameList()
 		{
 			$this->connection = openConnectionDataBase($this->dbName);

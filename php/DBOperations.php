@@ -141,18 +141,24 @@
 	{
 		$sql = "SELECT id, $field1, $field2 FROM $tableName";
 		$result = $connection->query($sql);
+			echo "<thead>";
+				echo "<tr>";
+					echo "<th>" .ucwords($field1). "</th>";
+					echo "<th>" .ucwords($field2). "</th>";
+				echo "</tr>";
+			echo "</thead>";
+			echo "<tbody>";
 
 		if($result->num_rows > 0)
 		{
 			while($row = $result->fetch_assoc())
 			{
-				echo "<li>[$row[id]] -> $field1: $row[$field1] - 
-						$field2: $row[$field2]</li>";
+				echo "<tr>";
+					echo "<td> $row[$field1] </td>"; 
+					echo "<td> $row[$field2] </td>";
+				echo "</tr>";
 			}
-		}
-		else
-		{
-			echo "No results found<br/>";
+			echo "</tbody>";
 		}
 	}
 	function selectFromTableByValue($connection, $tableName, $field1, $field2,

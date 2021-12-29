@@ -39,6 +39,17 @@
 			echo file_get_contents("../html/thereIsNoAgenda.html");
 		}
 	}
+	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['editContact']))
+	{
+		if($dbExists)
+		{
+			echo file_get_contents("../html/editContact.html");
+		}
+		else
+		{
+			echo file_get_contents("../html/thereIsNoAgenda.html");
+		}
+	}
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['delContact']))
 	{
 		if($dbExists)

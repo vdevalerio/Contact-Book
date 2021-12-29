@@ -187,6 +187,22 @@
 			echo "</tbody>";
 		}
 	}
+	function checkValueExistence($connection, $tableName, 
+		   							$requiredField, $requiredValue)
+	{
+		$sql = "SELECT $requiredField FROM $tableName WHERE
+			   		$requiredField='$requiredValue'";
+		$result = $connection->query($sql);
+
+		if($result->num_rows > 0)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 	function selectFromTableByField($connection, $tableName, $field)
 	{
 		$sql = "SELECT $field FROM $tableName";

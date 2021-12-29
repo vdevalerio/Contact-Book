@@ -97,12 +97,17 @@
 				$this->field1);	
 			closeConnection($this->connection);
 		}
+		public function checkContactExistence($name)
+		{
+			$this->connection = openConnectionDataBase($this->dbName);
+			return checkValueExistence($this->connection, $this->tableName, $this->field1, $name);
+			closeConnection($this->connection);
+		}
 		public function deleteContact($name)
 		{
 			$this->connection = openConnectionDataBase($this->dbName);
 			deleteFromTable($this->connection, $this->tableName, $this->field1,
 							$name);
-			closeConnection($this->connection);
 			#for($i = 0; $i < count($this->contactList); $i++)
 			#{
 			#	if($this->contactList[$i]->getName() == $name)

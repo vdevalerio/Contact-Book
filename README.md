@@ -5,6 +5,7 @@ A project for [Test Dev PHP] by Umobi.
 ### Problems to fix:
 - Bug in outputs being printed under header;
 - Lead with DBOperations output;
+- A lot of unnecessary code, refact it as soon as possible;
 
 #### TODO:
 - (Search and) Use a composer;

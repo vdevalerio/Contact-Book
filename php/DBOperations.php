@@ -4,7 +4,7 @@
 	{
 		$dbhost = "127.0.0.1";
 		$dbuser = "root";
-		$dbpass = "MQjLTkEoTc714U][";
+		$dbpass = "";
 
 		$connection = new mysqli($dbhost, $dbuser, $dbpass);
 
@@ -23,7 +23,7 @@
 	{
 		$dbhost = "127.0.0.1";
 		$dbuser = "root";
-		$dbpass = "MQjLTkEoTc714U][";
+		$dbpass = "";
 
 		$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 

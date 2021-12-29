@@ -7,9 +7,6 @@ A project for [Test Dev PHP] by Umobi.
 - Lead with DBOperations output;
 
 #### TODO:
-- Add a new screen with contact's information;
-- Do a interface to handle IO;
-- Make the interface kinda pretty;
 - (Search and) Use a composer;
 - (Search and) Use a back-end framework (Laravel);
 - (Search and) Use a front-end framework (Angular, React, Vue);
